@@ -1,24 +1,13 @@
 import React from 'react';
-import Hero from './components/Hero';
-import About from './components/About';
-import Services from './components/Services';
-import CallToAction from './components/CallToAction';
-import Footer from './components/Footer';
-import Header from './components/Header';
-import TrainWithUs from './components/TrainWithUs';
-import SuccessStories from './components/SuccessStories';
-
+import Button from "./components/buttons/Button";
 function App() {
   return (
     <div className="App">
-      <Header />
-      <Hero />
-      <About />
-      <Services />
-      <TrainWithUs />
-      <SuccessStories />
-      <CallToAction />
-      <Footer />
+        <div className="buttons">
+            <Button styleType="black">Try out</Button>
+            <Button styleType="gray600">Try out</Button>
+            <Button styleType="white">Try out</Button>
+        </div>
     </div>
   );
 }
