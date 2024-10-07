@@ -1,7 +1,16 @@
 import React from 'react';
 
-const Input = ({ styleType, placeholder, onChange }) => {
-    const baseStyles = 'rounded-lg font-medium py-2 px-4 m-2 transition-all';
+const Input = ({
+                   styleType = 'black',
+                   placeholder,
+                   onChange,
+                   icon,
+                   iconPosition = 'left',
+                   disabled,
+                   onFocus,
+                   onBlur
+               }) => {
+    const baseStyles = 'rounded-lg font-medium py-2 px-4 m-2 transition-all flex items-center';
 
     const styleTypes = {
         black: 'bg-black text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-gray-500',
@@ -10,12 +19,24 @@ const Input = ({ styleType, placeholder, onChange }) => {
     };
 
     return (
-        <input
-            type="text"
-            className={`${baseStyles} ${styleTypes[styleType]}`}
-            placeholder={placeholder}
-            onChange={onChange}
-        />
+        <div className={`relative ${disabled ? 'opacity-50 cursor-not-allowed' : ''}`}>
+            {icon && (
+                <span className={`absolute inset-y-0 ${iconPosition === 'left' ? 'left-2' : 'right-2'} flex items-center`}>
+                    <span className={styleType === 'black' ? 'text-white' : 'text-black'}>
+                        {icon}
+                    </span>
+                </span>
+            )}
+            <input
+                type="text"
+                className={`${baseStyles} ${styleTypes[styleType]} ${icon ? 'pl-10' : ''} ${iconPosition === 'right' ? 'pr-10' : ''}`}
+                placeholder={placeholder}
+                onChange={onChange}
+                onFocus={onFocus}
+                onBlur={onBlur}
+                disabled={disabled}
+            />
+        </div>
     );
 };
 
