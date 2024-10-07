@@ -3,6 +3,7 @@ import Button from "./components/buttons/Button";
 import Input from "./components/input/Input";
 import Card from "./components/card/Card";
 import {FaBeer, FaUser} from "react-icons/fa";
+import Link from "./components/links/link";
 
 function App() {
     const handleClick = () => {};
@@ -67,6 +68,40 @@ function App() {
                 styleType="white"
                 size='lg'
             />
+        </div>
+
+        <div>
+            <Link
+                styleType="black"
+                onClick={handleClick}
+                icon={<span>🔗</span>}
+            >
+                left black link
+            </Link>
+
+            <Link
+                styleType="gray600"
+                onClick={handleClick}
+                icon={<span>⚙️</span>}
+                iconPosition="right"
+            >
+                right link
+            </Link>
+
+            <Link
+                styleType="white"
+                onClick={handleClick}
+                disabled
+            >
+                disabled link
+            </Link>
+
+            <Link
+                styleType="black"
+                icon={<span>🌐</span>}
+            >
+                без onClick link
+            </Link>
         </div>
     </div>
   );
