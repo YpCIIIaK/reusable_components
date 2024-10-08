@@ -9,6 +9,10 @@ function App() {
     const handleClick = () => {};
     const handleChange = () => {};
 
+    const handleCardClick = () => {};
+
+    const handleButtonClick = (e) => {};
+
   return (
     <div className="App">
         <div className="buttons">
@@ -52,24 +56,36 @@ function App() {
             />
         </div>
 
-        <div>
+        <div className='flex flex-row'>
             <Card
-                title="Card Title"
-                content="This is content inside the card."
+                title="Товар 1"
+                content="Описание товара 1"
                 styleType="black"
-                size='sm'
+                size="md"
+                imageSrc="https://via.placeholder.com/300"
+                buttonLabel="Добавить в корзину"
+                onClick={handleCardClick}
+                onButtonClick={handleButtonClick}
             />
             <Card
-                title="Card Title"
-                content="This is content inside the card."
+                title="Товар 2"
+                content="Описание товара 2"
                 styleType="gray600"
-                size='md'
+                size="lg"
+                imageSrc="https://via.placeholder.com/400"
+                buttonLabel="Купить"
+                onClick={handleCardClick}
+                onButtonClick={handleButtonClick}
             />
             <Card
-                title="Card Title"
-                content="This is content inside the card."
+                title="Товар 3"
+                content="Описание товара 3"
                 styleType="white"
-                size='lg'
+                size="sm"
+                imageSrc="https://via.placeholder.com/200"
+                buttonLabel="Посмотреть"
+                onClick={handleCardClick}
+                onButtonClick={handleButtonClick}
             />
         </div>
 
