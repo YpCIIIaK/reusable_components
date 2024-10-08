@@ -77,16 +77,7 @@ function App() {
                 onClick={handleCardClick}
                 onButtonClick={handleButtonClick}
             />
-            <Card
-                title="Товар 3"
-                content="Описание товара 3"
-                styleType="white"
-                size="sm"
-                imageSrc="https://via.placeholder.com/200"
-                buttonLabel="Посмотреть"
-                onClick={handleCardClick}
-                onButtonClick={handleButtonClick}
-            />
+
         </div>
 
         <div>
