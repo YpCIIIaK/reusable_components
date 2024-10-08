@@ -7,7 +7,7 @@ const Card = ({
                   size,
                   onClick,
                   imageSrc,
-                  children // Добавляем children для передачи кнопки
+                  children,
               }) => {
     const baseStyles = 'rounded-lg p-4 m-2 transition-all shadow-md hover:shadow-lg cursor-pointer';
 
