@@ -5,11 +5,20 @@ const Input = ({
                    placeholder,
                    onChange,
                    icon,
+                   size,
                    iconPosition = 'left',
                    disabled,
                    onFocus,
                    onBlur
                }) => {
+
+    const sizeStyles = {
+        sm: 'w-[200px]',
+        md: 'w-[300px]',
+        lg: 'w-[350px]',
+        xl1: 'w-[400px]',
+    }
+
     const baseStyles = 'rounded-lg font-medium py-2 px-4 m-2 transition-all flex items-center';
 
     const styleTypes = {
@@ -20,22 +29,25 @@ const Input = ({
 
     return (
         <div className={`relative ${disabled ? 'opacity-50 cursor-not-allowed' : ''}`}>
-            {icon && (
-                <span className={`absolute inset-y-0 ${iconPosition === 'left' ? 'left-2' : 'right-2'} flex items-center`}>
-                    <span className={styleType === 'black' ? 'text-white' : 'text-black'}>
-                        {icon}
-                    </span>
-                </span>
-            )}
+            {/*{icon && iconPosition === 'left' && (*/}
+            {/*    <div className="absolute left-3 top-1/2 transform -translate-y-1/2 flex items-center">*/}
+            {/*        {icon}*/}
+            {/*    </div>*/}
+            {/*)}*/}
             <input
                 type="text"
-                className={`${baseStyles} ${styleTypes[styleType]} ${icon ? 'pl-10' : ''} ${iconPosition === 'right' ? 'pr-10' : ''}`}
+                className={`${baseStyles} ${sizeStyles[size]} ${styleTypes[styleType]} ${icon ? (iconPosition === 'left' ? '' : '') : ''}`}
                 placeholder={placeholder}
                 onChange={onChange}
                 onFocus={onFocus}
                 onBlur={onBlur}
                 disabled={disabled}
             />
+            {/*{icon && iconPosition === 'right' && (*/}
+            {/*    <div className="absolute right-3 top-1/2 transform -translate-y-1/2 flex items-center">*/}
+            {/*        {icon}*/}
+            {/*    </div>*/}
+            {/*)}*/}
         </div>
     );
 };

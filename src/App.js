@@ -31,6 +31,7 @@ function App() {
                 styleType="black"
                 placeholder="Введите текст"
                 onChange={handleChange}
+                size='sm'
                 icon={<FaUser />}
                 iconPosition="left"
             />
@@ -38,12 +39,14 @@ function App() {
                 styleType="gray600"
                 placeholder="Отключенный инпут"
                 onChange={handleChange}
+                size='md'
                 disabled
             />
             <Input
                 styleType="white"
                 placeholder="С иконкой справа"
                 onChange={handleChange}
+                size='lg'
                 icon={<FaUser />}
                 iconPosition="right"
             />
