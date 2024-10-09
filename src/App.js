@@ -2,8 +2,9 @@ import React from 'react';
 import Button from "./components/buttons/Button";
 import Input from "./components/input/Input";
 import Card from "./components/card/Card";
-import {FaBeer, FaShoppingCart, FaUser} from "react-icons/fa";
+import {FaBeer, FaCheckCircle, FaExclamationCircle, FaShoppingCart, FaUser} from "react-icons/fa";
 import Link from "./components/links/link";
+import Alert from "./components/alert/Alert";
 
 function App() {
     const handleClick = () => {};
@@ -140,6 +141,21 @@ function App() {
             >
                 без onClick link
             </Link>
+        </div>
+
+        <div>
+            <Alert type="success" icon={<FaCheckCircle />}>
+                Success
+            </Alert>
+            <Alert type="error" icon={<FaExclamationCircle />}>
+                Error
+            </Alert>
+            <Alert type="warning" icon={<FaExclamationCircle />}>
+                Warning
+            </Alert>
+            <Alert type="info">
+                Info
+            </Alert>
         </div>
     </div>
   );
