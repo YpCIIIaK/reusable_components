@@ -5,6 +5,7 @@ import Card from "./components/card/Card";
 import {FaBeer, FaCheckCircle, FaExclamationCircle, FaShoppingCart, FaUser} from "react-icons/fa";
 import Link from "./components/links/link";
 import Alert from "./components/alert/Alert";
+import Accordion from "./components/accordeon/Accordeon";
 
 function App() {
     const handleClick = () => {};
@@ -14,6 +15,11 @@ function App() {
 
     const handleButtonClick = (e) => {};
 
+    const items = [
+        { title: 'Section 1', content: 'Content for section 1' },
+        { title: 'Section 2', content: 'Content for section 2' },
+        { title: 'Section 3', content: 'Content for section 3' },
+    ];
 
     return (
     <div className="App">
@@ -157,8 +163,12 @@ function App() {
                 Info
             </Alert>
         </div>
+
+        <div className='m-2'>
+            <Accordion items={items}/>
+        </div>
     </div>
-  );
+    );
 }
 
 export default App;
