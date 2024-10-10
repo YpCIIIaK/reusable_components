@@ -8,6 +8,7 @@ import Alert from "./components/alert/Alert";
 import Accordion from "./components/accordeon/Accordeon";
 import Dropdown from "./components/dropdown/Dropdown";
 import Modal from "./components/modal/Modal";
+import Bage from "./components/bage/Bage";
 
 function App() {
     const handleClick = () => {};
@@ -200,6 +201,12 @@ function App() {
                     Close
                 </Button>
             </Modal>
+        </div>
+
+        <div className='m-2'>
+            <Bage styleType='black' size='md'>
+                <h1>New</h1>
+            </Bage>
         </div>
     </div>
     );
