@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {useState} from 'react';
 import Button from "./components/buttons/Button";
 import Input from "./components/input/Input";
 import Card from "./components/card/Card";
@@ -7,6 +7,7 @@ import Link from "./components/links/link";
 import Alert from "./components/alert/Alert";
 import Accordion from "./components/accordeon/Accordeon";
 import Dropdown from "./components/dropdown/Dropdown";
+import Modal from "./components/modal/Modal";
 
 function App() {
     const handleClick = () => {};
@@ -16,6 +17,12 @@ function App() {
 
     const handleButtonClick = (e) => {};
 
+    const [isModalOpen, setIsModalOpen] = useState(false);
+
+    const openModal = () => setIsModalOpen(true);
+    const closeModal = () => setIsModalOpen(false);
+
+
     const items = [
         { title: 'Section 1', content: 'Content for section 1' },
         { title: 'Section 2', content: 'Content for section 2' },
@@ -24,7 +31,7 @@ function App() {
 
     return (
     <div className="App">
-        <div className="buttons mx-2">
+        <div className="mx-2">
             <Button onClick={handleClick} size='sm' styleType="black">
                 black
             </Button>
@@ -180,6 +187,19 @@ function App() {
                 onChange={(option) => console.log(option)}
                 size="md"
             />
+        </div>
+
+        <div className='mx-2'>
+            <Button onClick={openModal} styleType="black" size="md">
+                Open Modal
+            </Button>
+            <Modal isOpen={isModalOpen} onClose={closeModal}>
+                <h2 className="text-xl mb-4">Modal Title</h2>
+                <p>This is the modal content.</p>
+                <Button onClick={closeModal} styleType="black" size="md">
+                    Close
+                </Button>
+            </Modal>
         </div>
     </div>
     );

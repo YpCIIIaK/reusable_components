@@ -29,11 +29,11 @@ const Dropdown = ({
                 {selectedOption ? selectedOption.label : placeholder}
             </div>
             {isOpen && !disabled && (
-                <div className={`${sizeStyles[size]} absolute z-10 mt-1 w-full bg-white border border-gray-300 rounded-lg shadow-lg`}>
+                <div className={`${sizeStyles[size]} absolute bg-gray-200 z-10 mx-2 mt-1 rounded-lg`}>
                     {options.map((option) => (
                         <div
                             key={option.value}
-                            className={`${sizeStyles[size]} py-2 px-4 hover:bg-gray-100 cursor-pointer`}
+                            className={`py-2 px-4 hover:bg-gray-100 cursor-pointer  rounded-lg`}
                             onClick={() => {
                                 setSelectedOption(option);
                                 onChange(option);

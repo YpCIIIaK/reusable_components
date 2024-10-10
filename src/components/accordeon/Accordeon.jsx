@@ -6,7 +6,7 @@ const AccordionItem = ({
                            isOpen,
                            onToggle,
                     }) => {
-    const baseTitleStyles = 'flex justify-between items-center w-full py-3 px-4 text-left font-semibold cursor-pointer transition-all transition-colors duration-200';
+    const baseTitleStyles = 'flex justify-between bg-gray-200 items-center w-full py-3 px-4 text-left font-semibold cursor-pointer transition-all transition-colors duration-200';
     const activeTitleStyles = isOpen ? 'bg-gray-200 text-blue-600' : 'hover:bg-gray-100';
 
     return (
