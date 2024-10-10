@@ -180,7 +180,6 @@ function App() {
                 onChange={(option) => console.log(option)}
                 size="md"
             />
-
         </div>
     </div>
     );
