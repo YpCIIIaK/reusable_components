@@ -15,7 +15,6 @@ const Dropdown = ({
         sm: 'w-[200px]',
         md: 'w-[300px]',
         lg: 'w-[350px]',
-        xl1: 'w-[400px]',
     };
 
     const baseStyles = 'rounded-lg font-medium py-2 px-4 m-2 transition-all flex items-center border';
