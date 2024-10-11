@@ -15,7 +15,7 @@ const Carousel = ({ items, itemsToShow = 1, showArrows = true }) => {
     const visibleItems = items.slice(currentIndex, currentIndex + itemsToShow);
 
     return (
-        <div className="relative">
+        <div className="relative m-2">
             {showArrows && (
                 <Arrow direction="left" onClick={handlePrev} />
             )}
