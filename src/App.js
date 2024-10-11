@@ -9,6 +9,7 @@ import Accordion from "./components/accordeon/Accordeon";
 import Dropdown from "./components/dropdown/Dropdown";
 import Modal from "./components/modal/Modal";
 import Bage from "./components/bage/Bage";
+import Avatar from "./components/avatar/Avatar";
 
 function App() {
     const handleClick = () => {};
@@ -31,184 +32,203 @@ function App() {
     ];
 
     return (
-    <div className="App">
-        <div className="mx-2">
-            <Button onClick={handleClick} size='sm' styleType="black">
-                black
-            </Button>
-            <Button onClick={handleClick} size='md' styleType="gray600" disabled>
-                disabled
-            </Button>
-            <Button onClick={handleClick} size='lg' styleType="white" icon={<FaBeer />} iconPosition="left">
-                left
-            </Button>
-            <Button onClick={handleClick} size='xl1' styleType="white" icon={<FaBeer />} iconPosition="right">
-                right
-            </Button>
-        </div>
-
-        <div>
-            <Input
-                styleType="black"
-                placeholder="Введите текст"
-                onChange={handleChange}
-                size='sm'
-                icon={<FaUser />}
-                iconPosition="left"
-            />
-            <Input
-                styleType="gray600"
-                placeholder="Отключенный инпут"
-                onChange={handleChange}
-                size='md'
-                disabled
-            />
-            <Input
-                styleType="white"
-                placeholder="С иконкой справа"
-                onChange={handleChange}
-                size='lg'
-                icon={<FaUser />}
-                iconPosition="right"
-            />
-        </div>
-
-        <div className='flex flex-row'>
-            <Card
-                title="Товар 1"
-                content="Описание товара 1"
-                styleType="black"
-                size="md"
-                imageSrc="https://via.placeholder.com/300"
-                onClick={handleCardClick}
-            >
-                <Button
-                    styleType="white"
-                    onClick={handleButtonClick}
-                    icon={<FaShoppingCart />}
-                >
-                    Добавить
+        <div className="App">
+            <div className="mx-2">
+                <Button onClick={handleClick} size='sm' styleType="black">
+                    black
                 </Button>
-            </Card>
-            <Card
-                title="Товар 2"
-                content="Описание товара 2"
-                styleType="gray600"
-                size="lg"
-                imageSrc="https://via.placeholder.com/400"
-                onClick={handleCardClick}
-            >
-                <Button
-                    styleType="gray600"
-                    onClick={handleButtonClick}
-                >
-                    Добавить
+                <Button onClick={handleClick} size='md' styleType="gray600" disabled>
+                    disabled
                 </Button>
-            </Card>
-            <Card
-                title="Товар 3"
-                content="Описание товара 3"
-                styleType="white"
-                size="sm"
-                imageSrc="https://via.placeholder.com/200"
-                onClick={handleCardClick}
-            >
-                <Button
+                <Button onClick={handleClick} size='lg' styleType="white" icon={<FaBeer/>} iconPosition="left">
+                    left
+                </Button>
+                <Button onClick={handleClick} size='xl1' styleType="white" icon={<FaBeer/>} iconPosition="right">
+                    right
+                </Button>
+            </div>
+
+            <div>
+                <Input
                     styleType="black"
-                    onClick={handleButtonClick}
-                    icon={<FaShoppingCart />}
+                    placeholder="Введите текст"
+                    onChange={handleChange}
+                    size='sm'
+                    icon={<FaUser/>}
+                    iconPosition="left"
+                />
+                <Input
+                    styleType="gray600"
+                    placeholder="Отключенный инпут"
+                    onChange={handleChange}
+                    size='md'
+                    disabled
+                />
+                <Input
+                    styleType="white"
+                    placeholder="С иконкой справа"
+                    onChange={handleChange}
+                    size='lg'
+                    icon={<FaUser/>}
+                    iconPosition="right"
+                />
+            </div>
+
+            <div className='flex flex-row'>
+                <Card
+                    title="Товар 1"
+                    content="Описание товара 1"
+                    styleType="black"
+                    size="md"
+                    imageSrc="https://via.placeholder.com/300"
+                    onClick={handleCardClick}
+                >
+                    <Button
+                        styleType="white"
+                        onClick={handleButtonClick}
+                        icon={<FaShoppingCart/>}
+                    >
+                        Добавить
+                    </Button>
+                </Card>
+                <Card
+                    title="Товар 2"
+                    content="Описание товара 2"
+                    styleType="gray600"
+                    size="lg"
+                    imageSrc="https://via.placeholder.com/400"
+                    onClick={handleCardClick}
+                >
+                    <Button
+                        styleType="gray600"
+                        onClick={handleButtonClick}
+                    >
+                        Добавить
+                    </Button>
+                </Card>
+                <Card
+                    title="Товар 3"
+                    content="Описание товара 3"
+                    styleType="white"
+                    size="sm"
+                    imageSrc="https://via.placeholder.com/200"
+                    onClick={handleCardClick}
+                >
+                    <Button
+                        styleType="black"
+                        onClick={handleButtonClick}
+                        icon={<FaShoppingCart/>}
+                        iconPosition="right"
+                    >
+                        Добавить
+                    </Button>
+                </Card>
+            </div>
+
+            <div>
+                <Link
+                    styleType="black"
+                    onClick={handleClick}
+                    icon={<span>🔗</span>}
+                >
+                    left black link
+                </Link>
+
+                <Link
+                    styleType="gray600"
+                    onClick={handleClick}
+                    icon={<span>⚙️</span>}
                     iconPosition="right"
                 >
-                    Добавить
+                    right link
+                </Link>
+
+                <Link
+                    styleType="white"
+                    onClick={handleClick}
+                    disabled
+                >
+                    disabled link
+                </Link>
+
+                <Link
+                    styleType="black"
+                    icon={<span>🌐</span>}
+                >
+                    без onClick link
+                </Link>
+            </div>
+
+            <div>
+                <Alert type="success" icon={<FaCheckCircle/>}>
+                    Success
+                </Alert>
+                <Alert type="error" icon={<FaExclamationCircle/>}>
+                    Error
+                </Alert>
+                <Alert type="warning" icon={<FaExclamationCircle/>}>
+                    Warning
+                </Alert>
+                <Alert type="info">
+                    Info
+                </Alert>
+            </div>
+
+            <div className='m-2'>
+                <Accordion items={items}/>
+            </div>
+
+            <div>
+                <Dropdown
+                    options={[
+                        {label: 'Option 1', value: '1'},
+                        {label: 'Option 2', value: '2'},
+                        {label: 'Option 3', value: '3'},
+                    ]}
+                    placeholder="Choose an option"
+                    onChange={(option) => console.log(option)}
+                    size="md"
+                />
+            </div>
+
+            <div className='mx-2'>
+                <Button onClick={openModal} styleType="black" size="md">
+                    Open Modal
                 </Button>
-            </Card>
+                <Modal isOpen={isModalOpen} onClose={closeModal}>
+                    <h2 className="text-xl mb-4">Modal Title</h2>
+                    <p>This is the modal content.</p>
+                    <Button onClick={closeModal} styleType="black" size="md">
+                        Close
+                    </Button>
+                </Modal>
+            </div>
+
+            <div className='m-2'>
+                <Bage styleType='black' size='md'>
+                    <h1>New</h1>
+                </Bage>
+            </div>
+
+            <div className="bg-blue-300 flex flex-col items-center">
+                <Avatar
+                    src="https://via.placeholder.com/150"
+                    alt="Someone"
+                    size="lg"
+                    onClick={() => console.log('Avatar clicked!')}
+                    border={true}
+                    styleType="rounded"
+                />
+
+                <Avatar
+                    alt="Vova"
+                    size="lg"
+                    onClick={() => console.log('Avatar clicked!')}
+                    border={true}
+                    styleType="rounded"
+                />
+            </div>
         </div>
-
-        <div>
-            <Link
-                styleType="black"
-                onClick={handleClick}
-                icon={<span>🔗</span>}
-            >
-                left black link
-            </Link>
-
-            <Link
-                styleType="gray600"
-                onClick={handleClick}
-                icon={<span>⚙️</span>}
-                iconPosition="right"
-            >
-                right link
-            </Link>
-
-            <Link
-                styleType="white"
-                onClick={handleClick}
-                disabled
-            >
-                disabled link
-            </Link>
-
-            <Link
-                styleType="black"
-                icon={<span>🌐</span>}
-            >
-                без onClick link
-            </Link>
-        </div>
-
-        <div>
-            <Alert type="success" icon={<FaCheckCircle />}>
-                Success
-            </Alert>
-            <Alert type="error" icon={<FaExclamationCircle />}>
-                Error
-            </Alert>
-            <Alert type="warning" icon={<FaExclamationCircle />}>
-                Warning
-            </Alert>
-            <Alert type="info">
-                Info
-            </Alert>
-        </div>
-
-        <div className='m-2'>
-            <Accordion items={items}/>
-        </div>
-
-        <div>
-            <Dropdown
-                options={[
-                    { label: 'Option 1', value: '1' },
-                    { label: 'Option 2', value: '2' },
-                    { label: 'Option 3', value: '3' },
-                ]}
-                placeholder="Choose an option"
-                onChange={(option) => console.log(option)}
-                size="md"
-            />
-        </div>
-
-        <div className='mx-2'>
-            <Button onClick={openModal} styleType="black" size="md">
-                Open Modal
-            </Button>
-            <Modal isOpen={isModalOpen} onClose={closeModal}>
-                <h2 className="text-xl mb-4">Modal Title</h2>
-                <p>This is the modal content.</p>
-                <Button onClick={closeModal} styleType="black" size="md">
-                    Close
-                </Button>
-            </Modal>
-        </div>
-
-        <div className='m-2'>
-            <Bage styleType='black' size='md'>
-                <h1>New</h1>
-            </Bage>
-        </div>
-    </div>
     );
 }
 
