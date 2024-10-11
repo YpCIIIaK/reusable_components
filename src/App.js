@@ -10,6 +10,7 @@ import Dropdown from "./components/dropdown/Dropdown";
 import Modal from "./components/modal/Modal";
 import Bage from "./components/bage/Bage";
 import Avatar from "./components/avatar/Avatar";
+import Carousel from "./components/carousel/Carousel";
 
 function App() {
     const handleClick = () => {};
@@ -29,6 +30,13 @@ function App() {
         { title: 'Section 1', content: 'Content for section 1' },
         { title: 'Section 2', content: 'Content for section 2' },
         { title: 'Section 3', content: 'Content for section 3' },
+    ];
+
+    const carouselItems = [
+        <div className="bg-red-500 h-32 flex items-center justify-center text-white">Item 1</div>,
+        <div className="bg-blue-500 h-32 flex items-center justify-center text-white">Item 2</div>,
+        <div className="bg-green-500 h-32 flex items-center justify-center text-white">Item 3</div>,
+        <div className="bg-yellow-500 h-32 flex items-center justify-center text-white">Item 4</div>,
     ];
 
     return (
@@ -227,6 +235,10 @@ function App() {
                     border={true}
                     styleType="rounded"
                 />
+            </div>
+
+            <div>
+                <Carousel items={carouselItems} itemsToShow={1} showArrows={true}/>
             </div>
         </div>
     );
