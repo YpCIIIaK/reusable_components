@@ -210,7 +210,7 @@ function App() {
                 </Bage>
             </div>
 
-            <div className="bg-blue-300 flex flex-col items-center">
+            <div className="bg-blue-300">
                 <Avatar
                     src="https://via.placeholder.com/150"
                     alt="Someone"

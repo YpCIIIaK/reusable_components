@@ -8,7 +8,7 @@ const Avatar = ({
                     onClick,
                     styleType = 'default',
                 }) => {
-    const baseStyles = 'rounded-full transition-all my-1 flex items-center justify-center';
+    const baseStyles = 'rounded-full transition-all m-2 flex items-center justify-center';
 
     const sizeStyles = {
         sm: 'w-8 h-8',
