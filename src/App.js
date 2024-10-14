@@ -11,7 +11,8 @@ import Modal from "./components/modal/Modal";
 import Bage from "./components/bage/Bage";
 import Avatar from "./components/avatar/Avatar";
 import Carousel from "./components/carousel/Carousel";
-import Navbar from "./components/navbar/Navbar1";
+import Navbar from "./components/navbar/Navbar";
+import Footer from "./components/footer/Footer";
 
 function App() {
     const handleClick = () => {};
@@ -27,6 +28,16 @@ function App() {
     const closeModal = () => setIsModalOpen(false);
 
     const handleLinkClick = () => {};
+
+    const handleLinkClickFooter = (link) => {
+        console.log(`Navigating to ${link}`);
+    };
+
+    const links = [
+        { label: 'Privacy Policy', onClick: () => handleLinkClickFooter('Privacy Policy') },
+        { label: 'Terms of Service', onClick: () => handleLinkClickFooter('Terms of Service') },
+        { label: 'Contact Us', onClick: () => handleLinkClickFooter('Contact Us') },
+    ];
 
     const items = [
         { title: 'Section 1', content: 'Content for section 1' },
@@ -250,6 +261,14 @@ function App() {
 
             <div>
                 <Carousel items={carouselItems} itemsToShow={1} showArrows={true}/>
+            </div>
+
+            <div>
+                <Footer
+                    text="© 2024 Company. All rights reserved."
+                    links={links}
+                    styleType="black"
+                />
             </div>
         </div>
     );

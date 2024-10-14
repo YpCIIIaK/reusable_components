@@ -1,7 +1,7 @@
 import React from 'react';
 
-const Navbar = ({ links, logo, styleType = 'black', onLinkClick }) => {
-    const baseStyles = 'flex items-center justify-between p-4 shadow-md';
+const Footer = ({ links, text, styleType = 'black' }) => {
+    const baseStyles = 'flex flex-col items-center justify-center p-4 rounded-lg shadow-md';
 
     const styleTypes = {
         black: 'bg-black text-white',
@@ -9,25 +9,24 @@ const Navbar = ({ links, logo, styleType = 'black', onLinkClick }) => {
         white: 'bg-white text-black',
     };
 
-    const navbarStyles = `${baseStyles} ${styleTypes[styleType]}`;
+    const footerStyles = `${baseStyles} ${styleTypes[styleType]}`;
 
     return (
-        <nav className={navbarStyles}>
-            {logo && <div className="text-xl font-bold">{logo}</div>}
+        <footer className={footerStyles}>
+            {text && <div className="mb-2 text-center">{text}</div>}
             <div className="flex space-x-4">
                 {links.map((link, index) => (
                     <button
                         key={index}
                         className="hover:underline focus:outline-none"
-                        onClick={() => onLinkClick(link)}
+                        onClick={() => link.onClick()}
                     >
-                        {link}
+                        {link.label}
                     </button>
                 ))}
             </div>
-        </nav>
+        </footer>
     );
 };
 
-export default Navbar;
-
+export default Footer;
