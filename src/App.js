@@ -14,6 +14,7 @@ import Carousel from "./components/carousel/Carousel";
 import Navbar from "./components/navbar/Navbar";
 import Footer from "./components/footer/Footer";
 import Tooltip from "./components/tooltip/Tooltip";
+import Tabs from "./components/tab/Tabs";
 
 function App() {
     const handleClick = () => {};
@@ -53,6 +54,26 @@ function App() {
         <div className="bg-yellow-500 h-32 flex items-center justify-center text-white">Item 4</div>,
     ];
 
+    const [activeTab, setActiveTab] = useState('tab1');
+
+    const tabs = [
+        {
+            name: 'tab1',
+            label: 'Tab 1',
+            content: <div>This is the content of Tab 1.</div>,
+        },
+        {
+            name: 'tab2',
+            label: 'Tab 2',
+            content: <div>This is the content of Tab 2.</div>,
+        },
+        {
+            name: 'tab3',
+            label: 'Tab 3',
+            content: <div>This is the content of Tab 3.</div>,
+        },
+    ];
+
     return (
         <div className="App">
             <div>
@@ -62,6 +83,17 @@ function App() {
                     styleType="black"
                     onLinkClick={handleLinkClick}
                 />
+            </div>
+
+            <div>
+                <div className="p-4">
+                    <Tabs
+                        tabs={tabs}
+                        activeTab={activeTab}
+                        onTabChange={setActiveTab}
+                        styleType="black"
+                    />
+                </div>
             </div>
 
             <div className="mx-2">
