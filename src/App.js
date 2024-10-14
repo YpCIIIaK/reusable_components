@@ -11,6 +11,7 @@ import Modal from "./components/modal/Modal";
 import Bage from "./components/bage/Bage";
 import Avatar from "./components/avatar/Avatar";
 import Carousel from "./components/carousel/Carousel";
+import Navbar from "./components/navbar/Navbar1";
 
 function App() {
     const handleClick = () => {};
@@ -25,6 +26,7 @@ function App() {
     const openModal = () => setIsModalOpen(true);
     const closeModal = () => setIsModalOpen(false);
 
+    const handleLinkClick = () => {};
 
     const items = [
         { title: 'Section 1', content: 'Content for section 1' },
@@ -41,6 +43,15 @@ function App() {
 
     return (
         <div className="App">
+            <div>
+                <Navbar
+                    logo="MyLogo"
+                    links={['Home', 'About', 'Services', 'Contact']}
+                    styleType="black"
+                    onLinkClick={handleLinkClick}
+                />
+            </div>
+
             <div className="mx-2">
                 <Button onClick={handleClick} size='sm' styleType="black">
                     black
