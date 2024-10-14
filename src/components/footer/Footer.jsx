@@ -1,7 +1,7 @@
 import React from 'react';
 
 const Footer = ({ links, text, styleType = 'black' }) => {
-    const baseStyles = 'flex flex-col items-center justify-center p-4 rounded-lg shadow-md';
+    const baseStyles = 'flex flex-col items-center justify-center p-4';
 
     const styleTypes = {
         black: 'bg-black text-white',
