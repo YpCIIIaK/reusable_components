@@ -13,6 +13,7 @@ import Avatar from "./components/avatar/Avatar";
 import Carousel from "./components/carousel/Carousel";
 import Navbar from "./components/navbar/Navbar";
 import Footer from "./components/footer/Footer";
+import Tooltip from "./components/tooltip/Tooltip";
 
 function App() {
     const handleClick = () => {};
@@ -238,6 +239,14 @@ function App() {
                 <Bage styleType='black' size='md'>
                     <h1>New</h1>
                 </Bage>
+            </div>
+
+            <div className="mx-2">
+                <Tooltip text="black button">
+                    <Button onClick={handleClick} size='sm' styleType="black">
+                        black
+                    </Button>
+                </Tooltip>
             </div>
 
             <div className="bg-blue-300">
