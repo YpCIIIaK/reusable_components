@@ -1,7 +1,7 @@
 import React from 'react';
 
 const Toast = ({ message, onClose, styleType = 'black' }) => {
-    const baseStyles = 'fixed bottom-4 right-4 rounded-lg p-4 transition-all flex items-center justify-between shadow-lg';
+    const baseStyles = 'fixed bottom-4 right-4 rounded-lg p-4 transition-all flex items-center justify-between shadow-lg z-50';
 
     const styleTypes = {
         black: 'bg-black text-white',
