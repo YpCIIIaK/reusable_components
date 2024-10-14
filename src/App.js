@@ -15,6 +15,7 @@ import Navbar from "./components/navbar/Navbar";
 import Footer from "./components/footer/Footer";
 import Tooltip from "./components/tooltip/Tooltip";
 import Tabs from "./components/tab/Tabs";
+import Toast from "./components/toast/Toast";
 
 function App() {
     const handleClick = () => {};
@@ -74,6 +75,20 @@ function App() {
         },
     ];
 
+    const [toastMessage, setToastMessage] = useState('');
+    const [isToastVisible, setToastVisible] = useState(false);
+
+    const handleClickToast = () => {
+        setToastMessage('Button clicked!');
+        setToastVisible(true);
+
+        // Скрыть Toast через 3 секунды
+        setTimeout(() => {
+            setToastVisible(false);
+        }, 3000);
+    };
+
+
     return (
         <div className="App">
             <div>
@@ -109,6 +124,15 @@ function App() {
                 <Button onClick={handleClick} size='xl1' styleType="white" icon={<FaBeer/>} iconPosition="right">
                     right
                 </Button>
+            </div>
+
+            <div className="mx-2">
+                <Button onClick={handleClickToast} size='sm' styleType="black">
+                    black
+                </Button>
+                {isToastVisible && (
+                    <Toast message={toastMessage} onClose={() => setToastVisible(false)} styleType="black"/>
+                )}
             </div>
 
             <div>
