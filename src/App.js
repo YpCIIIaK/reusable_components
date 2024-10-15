@@ -1,4 +1,4 @@
-import React, {useState} from 'react';
+import React, {useEffect, useState} from 'react';
 import Button from "./components/buttons/Button";
 import Input from "./components/input/Input";
 import Card from "./components/card/Card";
@@ -17,6 +17,8 @@ import Tooltip from "./components/tooltip/Tooltip";
 import Tabs from "./components/tab/Tabs";
 import Toast from "./components/toast/Toast";
 import Sidebar from "./components/sidebar/Sidebar";
+import Table from "./components/table/Table";
+import ProgressBar from "./components/progress/ProgressBar";
 
 function App() {
     const handleClick = () => {};
@@ -98,6 +100,22 @@ function App() {
     const handleItemClick = (label) => {
         console.log(`Clicked on: ${label}`);
     };
+
+    const columns = ['Name', 'Age', 'Email'];
+    const data = [
+        { Name: 'Vladimir Vladimirov', Age: 20, Email: 'bigboyvova01@gmail.com' },
+        { Name: 'Vladimir Vladimirov', Age: 20, Email: 'bigboyvova01@gmail.com' },
+        { Name: 'Vladimir Vladimirov', Age: 20, Email: 'bigboyvova01@gmail.com' },
+    ];
+
+    const [progress, setProgress] = useState(0);
+
+    useEffect(() => {
+        const interval = setInterval(() => {
+            setProgress((prev) => (prev < 100 ? prev + 10 : 100));
+        }, 1000);
+        return () => clearInterval(interval);
+    }, []);
 
     return (
         <div className="App">
@@ -313,6 +331,16 @@ function App() {
                         black
                     </Button>
                 </Tooltip>
+            </div>
+
+            <div className="p-4">
+                <h1 className="text-xl mb-4">Loading Progress</h1>
+                <ProgressBar progress={progress} size="md" color="blue"/>
+            </div>
+
+            <div className="mx-2 my-2">
+                <h1 className="text-xl mb-4">List</h1>
+                <Table data={data} columns={columns}/>
             </div>
 
             <div className="bg-blue-300">
