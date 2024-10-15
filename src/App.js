@@ -2,7 +2,7 @@ import React, {useState} from 'react';
 import Button from "./components/buttons/Button";
 import Input from "./components/input/Input";
 import Card from "./components/card/Card";
-import {FaBeer, FaCheckCircle, FaExclamationCircle, FaShoppingCart, FaUser} from "react-icons/fa";
+import {FaBeer, FaCheckCircle, FaCog, FaExclamationCircle, FaHome, FaShoppingCart, FaUser} from "react-icons/fa";
 import Link from "./components/links/link";
 import Alert from "./components/alert/Alert";
 import Accordion from "./components/accordeon/Accordeon";
@@ -16,6 +16,7 @@ import Footer from "./components/footer/Footer";
 import Tooltip from "./components/tooltip/Tooltip";
 import Tabs from "./components/tab/Tabs";
 import Toast from "./components/toast/Toast";
+import Sidebar from "./components/sidebar/Sidebar";
 
 function App() {
     const handleClick = () => {};
@@ -88,6 +89,15 @@ function App() {
         }, 3000);
     };
 
+    const itemsSidebar = [
+        { label: 'Home', icon: <FaHome /> },
+        { label: 'Profile', icon: <FaUser /> },
+        { label: 'Settings', icon: <FaCog /> },
+    ];
+
+    const handleItemClick = (label) => {
+        console.log(`Clicked on: ${label}`);
+    };
 
     return (
         <div className="App">
@@ -326,6 +336,10 @@ function App() {
 
             <div>
                 <Carousel items={carouselItems} itemsToShow={1} showArrows={true}/>
+            </div>
+
+            <div className="flex">
+                <Sidebar items={itemsSidebar} onItemClick={handleItemClick} activeItem="Home"/>
             </div>
 
             <div>
