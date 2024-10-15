@@ -21,6 +21,7 @@ import Table from "./components/table/Table";
 import ProgressBar from "./components/progress/ProgressBar";
 import Spinner from "./components/spinner/Spinner";
 import Divider from "./components/divider/Divider";
+import DatePicker from "./components/datepicker/DatePicker";
 
 function App() {
     const handleClick = () => {};
@@ -118,6 +119,10 @@ function App() {
         }, 1000);
         return () => clearInterval(interval);
     }, []);
+
+    const handleDateChange = (date) => {
+        console.log('Selected Date:', date);
+    };
 
     return (
         <div className="App">
@@ -333,6 +338,24 @@ function App() {
                         black
                     </Button>
                 </Tooltip>
+            </div>
+
+            <div className="mx-2">
+
+                <DatePicker
+                    styleType="black"
+                    size="md"
+                    onDateChange={handleDateChange}
+                    icon={<i className="fas fa-calendar-alt"></i>}
+                />
+
+                <DatePicker
+                    styleType="white"
+                    size="lg"
+                    onDateChange={handleDateChange}
+                    icon={<i className="fas fa-calendar-alt"></i>}
+                    iconPosition="right"
+                />
             </div>
 
             <div className="p-4">
