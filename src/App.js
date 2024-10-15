@@ -363,8 +363,6 @@ function App() {
             </div>
 
             <div className="mx-2">
-                <h1 className="text-2xl font-bold mb-4">Custom File Uploader</h1>
-
                 <FileUploader
                     styleType="black"
                     size="md"
