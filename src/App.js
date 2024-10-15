@@ -20,6 +20,7 @@ import Sidebar from "./components/sidebar/Sidebar";
 import Table from "./components/table/Table";
 import ProgressBar from "./components/progress/ProgressBar";
 import Spinner from "./components/spinner/Spinner";
+import Divider from "./components/divider/Divider";
 
 function App() {
     const handleClick = () => {};
@@ -337,6 +338,10 @@ function App() {
             <div className="p-4">
                 <h1 className="text-xl mb-4">Loading Progress</h1>
                 <ProgressBar progress={progress} size="md" color="blue"/>
+            </div>
+
+            <div className="p-4">
+                <Divider orientation="horizontal" thickness="2px" color="blue"/>
             </div>
 
             <div className="flex items-center justify-center">
