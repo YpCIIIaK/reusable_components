@@ -19,6 +19,7 @@ import Toast from "./components/toast/Toast";
 import Sidebar from "./components/sidebar/Sidebar";
 import Table from "./components/table/Table";
 import ProgressBar from "./components/progress/ProgressBar";
+import Spinner from "./components/spinner/Spinner";
 
 function App() {
     const handleClick = () => {};
@@ -336,6 +337,10 @@ function App() {
             <div className="p-4">
                 <h1 className="text-xl mb-4">Loading Progress</h1>
                 <ProgressBar progress={progress} size="md" color="blue"/>
+            </div>
+
+            <div className="flex items-center justify-center">
+                <Spinner size="md" color="blue"/>
             </div>
 
             <div className="mx-2 my-2">
