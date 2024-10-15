@@ -22,6 +22,7 @@ import ProgressBar from "./components/progress/ProgressBar";
 import Spinner from "./components/spinner/Spinner";
 import Divider from "./components/divider/Divider";
 import DatePicker from "./components/datepicker/DatePicker";
+import FileUploader from "./components/fileuploader/FileUploader";
 
 function App() {
     const handleClick = () => {};
@@ -122,6 +123,10 @@ function App() {
 
     const handleDateChange = (date) => {
         console.log('Selected Date:', date);
+    };
+
+    const handleFileUpload = (file) => {
+        console.log('Uploaded File:', file);
     };
 
     return (
@@ -341,7 +346,6 @@ function App() {
             </div>
 
             <div className="mx-2">
-
                 <DatePicker
                     styleType="black"
                     size="md"
@@ -354,6 +358,25 @@ function App() {
                     size="lg"
                     onDateChange={handleDateChange}
                     icon={<i className="fas fa-calendar-alt"></i>}
+                    iconPosition="right"
+                />
+            </div>
+
+            <div className="mx-2">
+                <h1 className="text-2xl font-bold mb-4">Custom File Uploader</h1>
+
+                <FileUploader
+                    styleType="black"
+                    size="md"
+                    onFileUpload={handleFileUpload}
+                    icon={<i className="fas fa-upload"></i>}
+                />
+
+                <FileUploader
+                    styleType="white"
+                    size="lg"
+                    onFileUpload={handleFileUpload}
+                    icon={<i className="fas fa-upload"></i>}
                     iconPosition="right"
                 />
             </div>
